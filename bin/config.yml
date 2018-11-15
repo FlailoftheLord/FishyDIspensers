@@ -1,0 +1,32 @@
+#-----------------------------------------------------------------
+#==================================================================#
+#                                                                  #
+#                 Plugin by FlailoftheLord.                        #
+#        -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-                   #
+#   for questions please pm me on discord at FlailoftheLord#6842   #
+#          Join my discord server for faster support:              #
+#                https://discord.gg/wuxW5PS                        #
+#   ______               __        _____                           #
+#   |       |           /  \         |        |                    #
+#   |__     |          /____\        |        |                    #
+#   |       |         /      \       |        |                    #
+#   |       |_____   /        \    __|__      |______              #
+#                                                                  #
+#==================================================================#
+#-----------------------------------------------------------------
+
+# plugin prefix for messages
+Prefix: "&8(&3F&2D&8)"
+
+# message shown if a player doesn't have permission to use the commands.
+# use the placeholders %command% for the command and %prefix% for the plugin prefix.
+NoPermission: "%prefix% &cyou don't have permission to use /%command% &8(&7fishydispensers.command&8)"
+
+GetDispenserMessage: "%prefix% &ayou got a &3Fishy&2Dispenser&a!"
+
+ReloadPluginMessage: "%prefix% &areloaded plugin config :,>"
+
+# This is used to define the difference between a normal Dispenser or Dropper, and an Infinite one.
+# Simply type /fd get to get it
+# this can be color coded :>
+DispenserName: "&3Fishy&2Dispenser"
