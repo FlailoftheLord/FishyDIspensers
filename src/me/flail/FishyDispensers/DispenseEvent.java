@@ -32,7 +32,7 @@ public class DispenseEvent implements Listener {
 
 		String invTitle = ChatColor.translateAlternateColorCodes('&', dispenserName);
 
-		if (eInvName.equalsIgnoreCase(invTitle)) {
+		if (eInvName.equals(invTitle)) {
 
 			server.getScheduler().scheduleSyncDelayedTask(plugin, () -> {
 

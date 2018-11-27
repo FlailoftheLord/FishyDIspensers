@@ -1,16 +1,17 @@
 main: me.flail.FishyDispensers.FishyDispensers
 name: FishyDispensers
 author: FlailoftheLord
-version: 1.1
-description: customizable dispensers
+version: 1.2
+description: customizable infinite dispensers
+softdepend: [Essentials]
 
 commands:
   fishydispensers:
     usage: /fishydispensers [get:reload]
     description: use the fishy dispensers
-    aliases: [fdispenser, fdispensers, fishyd, fdis, fd]
+    aliases: [dispenser, fd]
     
 permissions:
   fishydispensers.command:
     description: use the command
-    default: op
+    default: false
