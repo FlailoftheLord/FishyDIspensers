@@ -18,17 +18,13 @@ public class Commands implements CommandExecutor {
 		FileConfiguration config = plugin.getConfig();
 
 		String dispenserName = config.getString("DispenserName");
-
 		ItemStack dispenser = new ItemStack(Material.DISPENSER, 1);
 
 		ItemMeta dMeta = dispenser.getItemMeta();
-
 		dMeta.setDisplayName(plugin.chat(dispenserName));
-
 		dispenser.setItemMeta(dMeta);
 
 		return dispenser;
-
 	}
 
 	@Override
@@ -39,11 +35,8 @@ public class Commands implements CommandExecutor {
 		String cmd = command.getName().toLowerCase();
 
 		String noPermission = config.getString("NoPermission");
-
 		String getDispenserMsg = config.getString("GetDispenserMessage");
-
 		String reloadMsg = config.getString("ReloadPluginMessage");
-
 		String version = plugin.getDescription().getVersion();
 
 		if (cmd.equals("fishydispensers")) {

@@ -1,8 +1,6 @@
 package me.flail.FishyDispensers;
 
-import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.Server;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -14,8 +12,6 @@ import org.bukkit.inventory.ItemStack;
 public class DispenseEvent implements Listener {
 
 	private FishyDispensers plugin = FishyDispensers.getPlugin(FishyDispensers.class);
-
-	private Server server = Bukkit.getServer();
 
 	@EventHandler
 	public void dispenseEvent(BlockDispenseEvent event) {
@@ -34,11 +30,11 @@ public class DispenseEvent implements Listener {
 
 		if (eInvName.equals(invTitle)) {
 
-			server.getScheduler().scheduleSyncDelayedTask(plugin, () -> {
+			plugin.server.getScheduler().scheduleSyncDelayedTask(plugin, () -> {
 
 				eInv.addItem(eItem);
 
-			}, 10);
+			}, 8);
 
 			event.getBlock().getState().update();
 
