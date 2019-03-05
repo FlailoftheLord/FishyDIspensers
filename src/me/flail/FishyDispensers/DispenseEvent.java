@@ -3,6 +3,7 @@ package me.flail.FishyDispensers;
 import org.bukkit.ChatColor;
 import org.bukkit.block.Block;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.inventory.Inventory;
@@ -13,7 +14,7 @@ public class DispenseEvent implements Listener {
 
 	private FishyDispensers plugin = FishyDispensers.getPlugin(FishyDispensers.class);
 
-	@EventHandler
+	@EventHandler(priority = EventPriority.HIGHEST)
 	public void dispenseEvent(BlockDispenseEvent event) {
 
 		Block eBlock = event.getBlock();
