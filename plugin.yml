@@ -1,7 +1,7 @@
 main: me.flail.FishyDispensers.FishyDispensers
 name: FishyDispensers
 author: FlailoftheLord
-version: 1.4
+version: 1.5
 description: customizable infinite dispensers
 
 commands:

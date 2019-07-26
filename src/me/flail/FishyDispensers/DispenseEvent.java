@@ -1,29 +1,27 @@
 package me.flail.FishyDispensers;
 
 import org.bukkit.ChatColor;
-import org.bukkit.block.Block;
+import org.bukkit.block.Dispenser;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.EventPriority;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockDispenseEvent;
 import org.bukkit.inventory.Inventory;
-import org.bukkit.inventory.InventoryHolder;
 import org.bukkit.inventory.ItemStack;
 
 public class DispenseEvent implements Listener {
 
 	private FishyDispensers plugin = FishyDispensers.getPlugin(FishyDispensers.class);
 
-	@EventHandler(priority = EventPriority.HIGHEST)
+	@EventHandler(priority = EventPriority.MONITOR)
 	public void dispenseEvent(BlockDispenseEvent event) {
 
-		Block eBlock = event.getBlock();
+		Dispenser dispenser = (Dispenser) event.getBlock().getState();
 
-		Inventory eInv = (((InventoryHolder) eBlock.getState()).getInventory());
+		ItemStack item = event.getItem();
+		Inventory inventory = dispenser.getSnapshotInventory();
 
-		ItemStack eItem = event.getItem();
-
-		String eInvName = eInv.getTitle();
+		String eInvName = dispenser.getCustomName();
 
 		String dispenserName = plugin.getConfig().getString("DispenserName");
 
@@ -33,12 +31,9 @@ public class DispenseEvent implements Listener {
 
 			plugin.server.getScheduler().scheduleSyncDelayedTask(plugin, () -> {
 
-				eInv.addItem(eItem);
-
-			}, 8);
-
-			event.getBlock().getState().update();
-
+				inventory.addItem(item.clone());
+				dispenser.update(true);
+			}, 6L);
 		}
 
 	}
